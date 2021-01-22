@@ -20,7 +20,7 @@ namespace congratulations
         public void randombutton_Clicked(object sender, EventArgs e)
         {
             rnd = new Random();
-            picker.SelectedIndex = rnd.Next(0, 4);
+            picker.SelectedIndex = rnd.Next(0, 5);
         }
 
         public void ButtonSend_Clicked(object sender, EventArgs e)
