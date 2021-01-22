@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="congratulations.MainPage" BackgroundColor="LightSeaGreen">
+
+        <StackLayout x:Name="stacklayout" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="Gray">
+            <Entry Placeholder="Выбери почту" x:Name="EntryRecipients" TextColor="Black"></Entry>
+            <Entry Placeholder="Напиши тему другу" x:Name="EntrySubject" TextColor="Black"></Entry>
+            <Entry Placeholder="Нажми на кнопку рандом" x:Name="EntryBody" TextColor="Black"></Entry>
+            <Button Text="Поздравить" x:Name="ButtonSend" Clicked="ButtonSend_Clicked" BackgroundColor="LightGreen"></Button>
+            <Button Text="Рандомное сообщение или выбери сообщение сам" x:Name="randombutton" Clicked="randombutton_Clicked" BackgroundColor="LightGreen"></Button>
+            <Picker TextColor="Black" Title="Выбор" x:Name="picker" SelectedIndexChanged="picker_SelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>
+                        С днем рождения.
+                    </x:String>
+                    <x:String>
+                        С 18 летием.
+                    </x:String>
+                    <x:String>
+                        С наилучшими пожеланиями.
+                    </x:String>
+                    <x:String>
+                        С хорошим будущем.
+                    </x:String>
+                    <x:String>
+                        Еще раз с 18 летием.
+                    </x:String>
+                </Picker.Items>
+            </Picker>
+        </StackLayout>
+</ContentPage>
