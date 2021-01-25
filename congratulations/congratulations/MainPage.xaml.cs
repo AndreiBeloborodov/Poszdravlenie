@@ -6,12 +6,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Plugin.Messaging;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace congratulations
 {
     public partial class MainPage : ContentPage
     {
         Random rnd;
+        private object tel_nr_email;
+
         public MainPage()
         {
             InitializeComponent();
@@ -31,6 +34,15 @@ namespace congratulations
                 emailMessenger.SendEmail($"{picker.SelectedItem}", $"{EntrySubject}", $"{EntryRecipients}");
             }
             ButtonSend.Text = "Отправлено!";
+        }
+
+        public void sms_btn_Clicked(object sender, EventArgs e)
+        {
+            var sms = CrossMessaging.Current.SmsMessenger;
+            if (sms.CanSendSms)
+            {
+                sms.SendSms(tel_nr_email.Text, Text.RichText);
+            }
         }
 
         public  void picker_SelectedIndexChanged(object sender, EventArgs e)
